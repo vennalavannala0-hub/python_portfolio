@@ -1,0 +1,29 @@
+{% load static %}
+<section class="hero" id="hero" aria-labelledby="hero-name">
+    <div class="container hero-grid">
+        <div class="hero-copy">
+            <p class="eyebrow">Available for thoughtful backend work</p>
+            <h1 id="hero-name">{{ site_profile.full_name }}</h1>
+            <p class="hero-role">{{ site_profile.headline }}</p>
+            <p class="hero-intro">{{ site_profile.short_intro }}</p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="#projects">View Projects</a>
+                <a class="btn btn-ghost" href="#contact">Contact Me</a>
+            </div>
+            <p class="hero-meta">
+                {% if site_profile.location %}<span>{{ site_profile.location }}</span>{% endif %}
+                {% if site_profile.availability %}<span>{{ site_profile.availability }}</span>{% endif %}
+            </p>
+        </div>
+        <div class="hero-portrait">
+            <div class="portrait-frame">
+                {% if site_profile.profile_image %}
+                    <img src="{{ site_profile.profile_image.url }}" alt="Portrait of {{ site_profile.full_name }}" width="420" height="520">
+                {% else %}
+                    <img src="{% static 'img/avatar.svg' %}" alt="Portrait placeholder for {{ site_profile.full_name }}" width="420" height="520">
+                {% endif %}
+            </div>
+            <p class="portrait-caption">Replace this image in <strong>Django Admin → Site profile</strong>.</p>
+        </div>
+    </div>
+</section>

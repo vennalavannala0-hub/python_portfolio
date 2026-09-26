@@ -1,0 +1,10 @@
+<footer class="site-footer">
+    <div class="container footer-row">
+        <p>© {% now "Y" %} {{ site_profile.full_name }}. Built with Django.</p>
+        <ul class="footer-links">
+            <li><a href="{{ site_profile.github_url }}" rel="noopener noreferrer" target="_blank">GitHub</a></li>
+            <li><a href="{{ site_profile.linkedin_url }}" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
+            <li><a href="mailto:{{ site_profile.email }}">Email</a></li>
+        </ul>
+    </div>
+</footer>

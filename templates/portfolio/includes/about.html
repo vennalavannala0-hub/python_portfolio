@@ -1,0 +1,22 @@
+<section class="section" id="about" aria-labelledby="about-title">
+    <div class="container">
+        <header class="section-header">
+            <p class="eyebrow">About</p>
+            <h2 id="about-title">Python and Django, with production in mind</h2>
+        </header>
+        <div class="about-grid">
+            <div class="about-copy prose">
+                {{ site_profile.about_text|linebreaks }}
+            </div>
+            <aside class="about-panel">
+                <h3>Career snapshot</h3>
+                <div class="prose">{{ site_profile.career_summary|linebreaks }}</div>
+                <ul class="fact-list">
+                    <li><span>Focus</span> Django, APIs, PostgreSQL</li>
+                    <li><span>Email</span> <a href="mailto:{{ site_profile.email }}">{{ site_profile.email }}</a></li>
+                    <li><span>GitHub</span> <a href="{{ site_profile.github_url }}" rel="noopener noreferrer" target="_blank">Profile</a></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,23 @@
+<section class="section" id="certifications" aria-labelledby="certs-title">
+    <div class="container">
+        <header class="section-header">
+            <p class="eyebrow">Proof of work</p>
+            <h2 id="certs-title">Certifications and achievements</h2>
+            <p class="section-lead">Keep this list current from Admin → Certifications. Add a credential URL when you have one.</p>
+        </header>
+        <ul class="cert-grid">
+            {% for item in certifications %}
+            <li class="cert-card">
+                <p class="cert-year">{{ item.year }}</p>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.issuer }}</p>
+                {% if item.credential_url %}
+                <a href="{{ item.credential_url }}" rel="noopener noreferrer" target="_blank">View credential</a>
+                {% endif %}
+            </li>
+            {% empty %}
+            <li class="empty-note">Add certifications in Django Admin.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

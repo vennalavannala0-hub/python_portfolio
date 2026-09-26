@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site_profile.seo_title }}</title>
+    <meta name="description" content="{{ site_profile.meta_description }}">
+    <meta name="author" content="{{ site_profile.full_name }}">
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ site_profile.seo_title }}">
+    <meta property="og:description" content="{{ site_profile.meta_description }}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    {% if site_profile.og_image %}
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ site_profile.og_image.url }}">
+    {% elif site_profile.profile_image %}
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ site_profile.profile_image.url }}">
+    {% endif %}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ site_profile.seo_title }}">
+    <meta name="twitter:description" content="{{ site_profile.meta_description }}">
+
+    <link rel="icon" href="{% static 'img/favicon.svg' %}" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="{% static 'img/favicon.svg' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    {% include "portfolio/includes/nav.html" %}
+    <main id="main">
+        {% block content %}{% endblock %}
+    </main>
+    {% include "portfolio/includes/footer.html" %}
+    <script src="{% static 'js/main.js' %}" defer></script>
+</body>
+</html>

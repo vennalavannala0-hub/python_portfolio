@@ -1,0 +1,22 @@
+<section class="section section-alt" id="skills" aria-labelledby="skills-title">
+    <div class="container">
+        <header class="section-header">
+            <p class="eyebrow">Skills</p>
+            <h2 id="skills-title">Tools I use to ship</h2>
+            <p class="section-lead">Update this grid in Admin → Skills. The icon key on each skill drives the badge artwork.</p>
+        </header>
+        <ul class="skill-grid">
+            {% for skill in skills %}
+            <li class="skill-card" data-icon="{{ skill.icon_key }}">
+                <span class="skill-icon" aria-hidden="true"></span>
+                <div>
+                    <h3>{{ skill.name }}</h3>
+                    {% if skill.summary %}<p>{{ skill.summary }}</p>{% endif %}
+                </div>
+            </li>
+            {% empty %}
+            <li class="empty-note">Add skills in Django Admin to populate this section.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

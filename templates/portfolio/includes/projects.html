@@ -1,0 +1,43 @@
+{% load static %}
+<section class="section" id="projects" aria-labelledby="projects-title">
+    <div class="container">
+        <header class="section-header">
+            <p class="eyebrow">Selected work</p>
+            <h2 id="projects-title">Projects</h2>
+            <p class="section-lead">Featured first. Titles, copy, screenshots, and links are all editable in Admin → Projects.</p>
+        </header>
+        <div class="project-grid">
+            {% for project in projects %}
+            <article class="project-card">
+                <div class="project-media">
+                    {% if project.is_featured %}<span class="badge">Featured</span>{% endif %}
+                    {% if project.image %}
+                        <img src="{{ project.image.url }}" alt="Screenshot of {{ project.title }}">
+                    {% else %}
+                        <img src="{% static 'img/project-placeholder.svg' %}" alt="">
+                    {% endif %}
+                </div>
+                <div class="project-body">
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.description }}</p>
+                    <ul class="tech-row">
+                        {% for tech in project.tech_list %}
+                        <li>{{ tech }}</li>
+                        {% endfor %}
+                    </ul>
+                    <div class="project-links">
+                        {% if project.github_url %}
+                        <a href="{{ project.github_url }}" rel="noopener noreferrer" target="_blank">GitHub</a>
+                        {% endif %}
+                        {% if project.live_url %}
+                        <a href="{{ project.live_url }}" rel="noopener noreferrer" target="_blank">Live demo</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </article>
+            {% empty %}
+            <p class="empty-note">Add projects in Django Admin to populate this section.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>

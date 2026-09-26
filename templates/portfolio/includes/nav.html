@@ -1,0 +1,26 @@
+{% load static %}
+<header class="site-header" id="top">
+    <nav class="nav" aria-label="Primary">
+        <a class="nav-brand" href="#top">
+            <span class="brand-mark" aria-hidden="true">{{ site_profile.initials }}</span>
+            <span class="brand-name">{{ site_profile.full_name }}</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+                <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
+                    <span class="theme-icon" aria-hidden="true"></span>
+                    <span class="theme-label">Theme</span>
+                </button>
+            </li>
+        </ul>
+    </nav>
+</header>
