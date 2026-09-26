@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 520" role="img" aria-label="Profile placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b241c"/>
+      <stop offset="1" stop-color="#171410"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="520" fill="url(#bg)"/>
+  <circle cx="210" cy="188" r="78" fill="#d7a15a" opacity="0.9"/>
+  <rect x="96" y="286" width="228" height="168" rx="114" fill="#d7a15a" opacity="0.9"/>
+  <text x="210" y="500" text-anchor="middle" fill="#b7aa98" font-family="Georgia, serif" font-size="16">Upload your photo in Admin</text>
+</svg>

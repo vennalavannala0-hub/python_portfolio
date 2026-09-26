@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-label="Project placeholder">
+  <rect width="800" height="420" fill="#231e18"/>
+  <rect x="48" y="48" width="704" height="324" rx="18" fill="none" stroke="#d7a15a" stroke-width="2" opacity="0.5"/>
+  <text x="400" y="215" text-anchor="middle" fill="#d7a15a" font-family="Georgia, serif" font-size="28">Project image</text>
+  <text x="400" y="250" text-anchor="middle" fill="#b7aa98" font-family="ui-sans-serif, sans-serif" font-size="16">Upload a screenshot in Django Admin</text>
+</svg>
